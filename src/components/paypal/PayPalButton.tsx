@@ -37,7 +37,7 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
         intent: "CAPTURE",
         purchase_units: [
           {
-            invoice_id: `${orderId}_${Math.random()}`,
+            invoice_id: orderId,
             amount: {
               value: amount.toFixed(2),
               currency_code: "USD",
