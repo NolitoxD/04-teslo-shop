@@ -116,7 +116,10 @@ export const placeOrder = async (
       });
 
       // 3. Crear la direccion de la orden
-      const { country, ...restAddress } = address;
+      // Extraemos el country, y también extraemos y descartamos userId y id
+      // porque podrían venir desde el frontend (o desde zustand si se cargaron de la DB)
+      // y la tabla OrderAddress no espera esos campos.
+      const { country, userId: _, id: __, ...restAddress } = address as any;
       const orderAddress = await tx.orderAddress.create({
         data: {
           ...restAddress,
