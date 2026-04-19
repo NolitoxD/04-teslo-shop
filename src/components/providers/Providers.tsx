@@ -2,6 +2,7 @@
 
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { SessionProvider } from "next-auth/react";
+import { Toaster } from 'sonner';
 
 interface Props {
   children: React.ReactNode;
@@ -17,7 +18,10 @@ export const Providers = ({ children }: Props) => {
       currency: 'USD',
       locale: 'es_ES',
     }}>
-      <SessionProvider>{children}</SessionProvider>
+      <SessionProvider>
+        {children}
+        <Toaster position="top-right" richColors />
+      </SessionProvider>
     </PayPalScriptProvider>
   );
 };

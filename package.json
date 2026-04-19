@@ -14,6 +14,7 @@
     "@paypal/react-paypal-js": "^9.1.0",
     "@prisma/client": "^5.5.2",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.41.3",
     "clsx": "^2.0.0",
     "next": "14.0.1",
     "next-auth": "^5.0.0-beta.3",
@@ -21,6 +22,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
     "react-icons": "^4.11.0",
+    "sonner": "^2.0.7",
     "swiper": "^11.0.3",
     "zod": "^3.22.4",
     "zustand": "^4.4.6"

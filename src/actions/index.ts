@@ -19,3 +19,10 @@ export * from './order/get-orders-by-user';
 
 export * from './payments/paypal-check-payment';
 export * from './payments/set-transaction-id';
+
+export * from './category/get-categories';
+export * from './order/get-paginated-orders';
+export * from './product/delete-product-image';
+export * from './product/create-update-product';
+export * from './user/change-user-role';
+export * from './user/get-paginater-users';
