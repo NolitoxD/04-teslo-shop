@@ -25,10 +25,6 @@ export const Sidebar = () => {
   const isAuthenticated = status === "authenticated";
   const isAdmin = session?.user?.role === "admin";
 
-  console.log({
-    session
-  })
-
   return (
     <div>
       {/* Background black */}

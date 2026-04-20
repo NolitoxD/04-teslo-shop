@@ -32,7 +32,6 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
     actions: CreateOrderActions,
   ): Promise<string> => {
     try {
-      console.log("Creando orden en PayPal con monto:", amount.toFixed(2));
       const transactionId = await actions.order.create({
         intent: "CAPTURE",
         purchase_units: [
@@ -50,7 +49,6 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
       if (!ok) {
         throw new Error("No se pudo actualizar la orden");
       }
-      console.log("transactionId obtenido:", transactionId);
       return transactionId;
     } catch (error) {
       console.error("🚀 Error creando la orden de PayPal:", error);
@@ -59,7 +57,6 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
   };
 
   const onApprove = async (data: OnApproveData, actions: OnApproveActions) => {
-    console.log("onApprove", { data });
     const details = await actions.order?.capture();
     if (!details) return;
 
@@ -74,7 +71,6 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
       }
 
       // ¡Todo salió perfecto! El server Action ejecutará revalidatePath y actualizará la UI a "Pagada"
-      console.log("✅ Pago registrado en base de datos de manera exitosa!");
       
     } catch (error) {
       console.error("🔥 Error crítico al contactar el servidor para verificar pago", error);
@@ -87,7 +83,7 @@ export const PayPalButton = ({ orderId, amount }: Props) => {
       createOrder={createOrder}
       onApprove={onApprove}
       onError={(err) => console.error("PayPal onError:", err)}
-      onCancel={() => console.log("PayPal: pago cancelado por el usuario")}
+      onCancel={() => {}}
     />
   );
 };
