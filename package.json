@@ -12,6 +12,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@paypal/paypal-js": "^9.6.0",
     "@paypal/react-paypal-js": "^9.1.0",
     "@prisma/client": "^5.5.2",
     "bcryptjs": "^2.4.3",

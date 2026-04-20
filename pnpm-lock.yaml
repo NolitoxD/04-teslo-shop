@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@paypal/paypal-js':
+        specifier: ^9.6.0
+        version: 9.6.0
       '@paypal/react-paypal-js':
         specifier: ^9.1.0
         version: 9.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -257,8 +260,8 @@ packages:
   '@panva/hkdf@1.2.1':
     resolution: {integrity: sha512-6oclG6Y3PiDFcoyk8srjLfVKyMfVCKJ27JwNPViuXziFpmdz+MZnZN/aKY0JGXgYuO/VghU0jcOAZgWXZ1Dmrw==}
 
-  '@paypal/paypal-js@9.5.0':
-    resolution: {integrity: sha512-j2p6uPpW0hlQ7KOwkiqscbAapZD9NocN1jcjA1Hm5za7PLteq81qVIgJR0Nr0/b1ytfnoN3L2QyG8XubU++kdQ==}
+  '@paypal/paypal-js@9.6.0':
+    resolution: {integrity: sha512-XVUC/2iUFcnz4cOgzTRPB0AltF2VHbALToClefCS7ehnINSx7UWKpShQbs3IIdALCaqtUDciQI8iFaBw12wM0g==}
 
   '@paypal/react-paypal-js@9.1.0':
     resolution: {integrity: sha512-IgWZ8zMdPNDYWatlLPtt0TmQQvRNzJ9qhDry8Tojw7UjXWZ59UkBfC8wr4mGaB5oJIwWhYezsVJ05E7jFGsJ2g==}
@@ -2097,13 +2100,13 @@ snapshots:
 
   '@panva/hkdf@1.2.1': {}
 
-  '@paypal/paypal-js@9.5.0':
+  '@paypal/paypal-js@9.6.0':
     dependencies:
       promise-polyfill: 8.3.0
 
   '@paypal/react-paypal-js@9.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@paypal/paypal-js': 9.5.0
+      '@paypal/paypal-js': 9.6.0
       '@paypal/sdk-constants': 1.0.157
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
