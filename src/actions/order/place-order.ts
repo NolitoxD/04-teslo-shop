@@ -1,5 +1,6 @@
 "use server";
 import prisma from "@/lib/prisma";
+import type { Product } from "@prisma/client";
 
 import { auth } from "@/auth.config";
 import type { Address, Size } from "@/interfaces";
@@ -42,7 +43,7 @@ export const placeOrder = async (
   const { subTotal, tax, total } = productIds.reduce(
     (totals, item) => {
       const productQuantity = item.quantity;
-      const product = products.find((p) => p.id === item.productId);
+      const product = products.find((p: Product) => p.id === item.productId);
 
       if (!product) throw new Error(`${item.productId} no existe - 500`);
 
@@ -107,7 +108,7 @@ export const placeOrder = async (
                 size: p.size,
                 productId: p.productId,
                 price:
-                  products.find((prod) => prod.id === p.productId)
+                  products.find((prod: Product) => prod.id === p.productId)
                     ?.price ?? 0,
               })),
             },
